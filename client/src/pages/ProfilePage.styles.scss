@@ -1,0 +1,31 @@
+.profile-page {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 520px;
+}
+
+.profile-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-page input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5f5;
+}
+
+.profile-page button {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-message {
+  margin: 0;
+}
