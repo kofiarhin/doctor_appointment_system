@@ -1,0 +1,27 @@
+.doctors-page {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.doctor-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.doctor-card {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.doctor-card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .doctor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
