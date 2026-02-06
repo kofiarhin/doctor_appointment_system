@@ -1,16 +1,14 @@
 {
-  "name": "doctor-appointment-system-tests",
+  "name": "doctor-appointment-system",
   "private": true,
-  "type": "commonjs",
   "scripts": {
-    "test:frontend": "vitest run --coverage",
-    "test:backend": "jest --coverage",
-    "test": "npm run test:frontend && npm run test:backend"
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "npm --prefix client/details run dev",
+    "dev:server": "npm --prefix server/server-details run dev",
+    "install:all": "npm install && npm --prefix client/details install && npm --prefix server/server-details install",
+    "test": "npm --prefix client/details run test && npm --prefix server/server-details run test"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "^2.1.8",
-    "jest": "^29.7.0",
-    "sass": "^1.83.4",
-    "vitest": "^2.1.8"
+    "concurrently": "^9.1.2"
   }
 }
