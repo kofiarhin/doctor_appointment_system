@@ -9,15 +9,27 @@ class Db {
 	$stmt,
 	$result,
 	$error = false,
-	$count = 0;
+	$count = 0,
+	$connected = false;
 
 
 	private function __construct() {
 
-		$this->pdo = new PDO("mysql:host=localhost;dbname=bruce_project", 'root', 'root');
+		$config = Config::get('mysql');
+		$host = $config['host'] ?? '127.0.0.1';
+		$dbname = $config['dbname'] ?? 'bruce_project';
+		$user = $config['user'] ?? 'root';
+		$password = $config['password'] ?? 'root';
 
+		try {
+			$this->pdo = new PDO("mysql:host={$host};dbname={$dbname}", $user, $password);
+			$this->connected = true;
+		} catch (PDOException $e) {
+			$this->pdo = null;
+			$this->connected = false;
+			$this->error = true;
+		}
 
-		
 	}
 
 
@@ -37,6 +49,13 @@ class Db {
 	public function query($sql, $fields = array()) {
 
 		$this->error = false;
+		$this->count = 0;
+		$this->result = array();
+
+		if(!$this->connected || !$this->pdo) {
+			$this->error = true;
+			return $this;
+		}
 
 		if($this->stmt = $this->pdo->prepare($sql)) {
 
@@ -255,7 +274,6 @@ class Db {
 
 
 			return false;
-
 
 
 

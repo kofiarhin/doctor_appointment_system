@@ -18,20 +18,12 @@ $user = new User;
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 
-	<!--====  bootstrap css=======-->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<!--====  custom style sheet=======-->
-	<link rel="stylesheet" href="css/styles.css">
+	<!--==== custom style sheet=======-->
+	<link rel="stylesheet" href="css/main.css">
 
 
 	<!--====  jquery=======-->
 	<script src='js/jquery.js'></script>
-
-	<!--====  bootstrap js=======-->
-
-	<script src='js/bootstrap.min.js'></script>
-
 
 	<!--==== custom js=======-->
 	<script src='js/main.js'></script>
