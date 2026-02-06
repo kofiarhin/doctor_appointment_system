@@ -1,0 +1,70 @@
+$brand: #1d7cf2;
+$text: #111827;
+$border: #e5e7eb;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: $text;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: min(1200px, 100% - 2rem);
+  margin: 0 auto;
+}
+
+.main-header {
+  margin-bottom: 30px;
+  padding: 15px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 40px;
+    font-weight: 800;
+
+    a {
+      color: $brand;
+      text-decoration: none;
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  nav a {
+    margin-left: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text;
+
+    &:hover {
+      color: $brand;
+    }
+  }
+}
+
+.page-header {
+  border-bottom: 2px solid $border;
+  padding-bottom: 20px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.display-4 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.text-center {
+  text-align: center;
+}
